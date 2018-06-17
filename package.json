@@ -1,0 +1,53 @@
+{
+  "name": "Enlight",
+  "description": "Learn to code by buildign projects",
+  "version": "1.0.0",
+  "author": "Samay Shamdasani",
+  "dependencies": {
+    "disqus-react": "^1.0.5",
+    "firebase": "^5.0.4",
+    "gatsby": "^1.9.271",
+    "gatsby-link": "^1.6.44",
+    "gatsby-plugin-feed": "^1.3.20",
+    "gatsby-plugin-google-analytics": "^1.0.29",
+    "gatsby-plugin-offline": "^1.0.15",
+    "gatsby-plugin-react-helmet": "^1.0.8",
+    "gatsby-plugin-react-next": "^1.0.11",
+    "gatsby-plugin-sharp": "^1.6.42",
+    "gatsby-plugin-typography": "^1.7.18",
+    "gatsby-remark-copy-linked-files": "^1.5.31",
+    "gatsby-remark-images": "^1.5.61",
+    "gatsby-remark-prismjs": "^1.2.24",
+    "gatsby-remark-responsive-iframe": "^1.4.18",
+    "gatsby-remark-smartypants": "^1.4.12",
+    "gatsby-source-filesystem": "^1.5.31",
+    "gatsby-transformer-remark": "^1.7.40",
+    "gatsby-transformer-sharp": "^1.6.22",
+    "lodash": "^4.17.5",
+    "particles.js": "^2.0.0",
+    "prismjs": "^1.14.0",
+    "react-grid-system": "^4.1.1",
+    "react-helmet": "^5.2.0",
+    "react-tilt": "^0.1.4",
+    "react-vanilla-tilt": "^1.0.0",
+    "scroll-to-element": "^2.0.0",
+    "styled-components": "^3.3.2"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "main": "n/a",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
+    "test": "echo \"No test specified\" && exit 0"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-plugin-react": "^7.7.0",
+    "gh-pages": "^1.1.0",
+    "prettier": "^1.12.0"
+  }
+}
