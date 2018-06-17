@@ -1,5 +1,7 @@
 # blog-views
 
+Thanks to https://github.com/rauchg for this view counter implementation!
+
 Microservice that logs views for the realtime counters
 of [rauchg's blog](https://github.com/rauchg/blog), and prevents
 abuse by logging IPs.
@@ -22,7 +24,7 @@ npm start
 Install [now](https://zeit.co/download) and run:
 
 ```
-now 
+now
 ```
 
 ## API
