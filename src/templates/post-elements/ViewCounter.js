@@ -4,6 +4,7 @@ import styled from "styled-components";
 const CounterText = styled.div`
   color: #545659;
   letter-spacing: 2px;
+  font-size: 20px;
   text-transform: uppercase;
   display: inline-block;
   font-weight: bold;

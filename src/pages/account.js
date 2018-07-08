@@ -1,57 +1,70 @@
-import React from 'react';
+import React from "react";
 
-import AuthUserContext from '../components/Session/AuthUserContext';
-import { PasswordForgetForm } from '../components/PasswordForget';
-import PasswordChangeForm from '../components/PasswordChange';
-import withAuthorization from '../components/Session/withAuthorization';
+import AuthUserContext from "../components/Session/AuthUserContext";
+import { PasswordForgetForm } from "../components/PasswordForget";
+import PasswordChangeForm from "../components/PasswordChange";
+import withAuthorization from "../components/Session/withAuthorization";
 
-import { auth } from './../firebase';
+import { auth } from "./../firebase";
+import firebase from "firebase/app";
+import "firebase/auth";
 
-import Header from '../components/Header';
-import styled from 'styled-components'
+import Header from "../components/Header";
+import styled from "styled-components";
+import Footer from "../components/Footer";
 
-const SignElements = styled.div`
-padding: 4%;
-font-size: 20px;
-`
+import Label from "../components/elements/label.js";
+
+const Container = styled.div`
+  margin: 0 auto;
+  max-width: 90%;
+  font-size: 20px;
+  padding: 2%;
+`;
 
 const Button = styled.button`
   margin-top: 20px;
   padding: 10px;
   font-size: 20px;
-  border: 5px solid #438cee;
-  color: #438cee;
+  border: 3px solid #e4e4e4;
+  color: #333;
   border-radius: 5px;
   margin-right: 5px;
   font-weight: bold;
   background-color: #fff;
   z-index: 500;
-
+  display: block;
+  height: 50px;
 
   &:hover {
-    background: #438cee;
-    color: #fff;
+    background: #fff;
+    border: 3px solid #438cee;
+    color: #333;
     transition: all 300ms ease;
+    cursor: pointer;
   }
-`
+`;
 
-const AccountPage = () =>
+const AccountPage = () => (
   <AuthUserContext.Consumer>
-    {authUser =>
+    {authUser => (
       <div>
-      <Header />
-      <SignElements>
-      <h1>Account: {authUser.email}</h1>
-        <PasswordForgetForm />
-        <PasswordChangeForm /> <br/><br/>
-        <Button onClick={auth.doSignOut}>Sign Out</Button>
-
-      </SignElements>
-
+        <Header />
+        <Container>
+          <Label>Hello, {firebase.auth().currentUser.displayName}</Label>
+          <h3>{authUser.email}</h3>
+          <hr />
+          <PasswordForgetForm />
+          <PasswordChangeForm /> <br />
+          <br />
+          <Button onClick={auth.doSignOut}>Sign Out</Button>
+        </Container>
+        <Footer />
       </div>
-    }
+    )}
   </AuthUserContext.Consumer>
+);
 
-const authCondition = (authUser) => !!authUser;
+const authCondition = authUser => !!authUser;
 
 export default withAuthorization(authCondition)(AccountPage);

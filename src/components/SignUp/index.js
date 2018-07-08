@@ -6,22 +6,28 @@ import * as routes from "../../constants/routes";
 
 import styled from "styled-components";
 
+import SignUpWithGoogle from "./Google";
+import SignUpWithGithub from "./Github";
+
 const Button = styled.button`
   margin-top: 20px;
   padding: 10px;
   font-size: 20px;
-  border: 5px solid #438cee;
-  color: #438cee;
+  border: 3px solid #e4e4e4;
+  color: #333;
   border-radius: 5px;
   margin-right: 5px;
   font-weight: bold;
   background-color: #fff;
   z-index: 500;
+  display: block;
 
   &:hover {
-    background: #438cee;
-    color: #fff;
+    background: #fff;
+    border: 3px solid #438cee;
+    color: #333;
     transition: all 300ms ease;
+    cursor: pointer;
   }
 `;
 
@@ -84,53 +90,64 @@ class SignUpForm extends Component {
       email === "";
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
-          value={username}
-          onChange={event =>
-            this.setState(updateByPropertyName("username", event.target.value))
-          }
-          type="text"
-          placeholder="Full Name"
-          className="large"
-        />
-        <input
-          value={email}
-          onChange={event =>
-            this.setState(updateByPropertyName("email", event.target.value))
-          }
-          type="text"
-          placeholder="Email Address"
-          className="large"
-        />
-        <input
-          value={passwordOne}
-          onChange={event =>
-            this.setState(
-              updateByPropertyName("passwordOne", event.target.value)
-            )
-          }
-          type="password"
-          placeholder="Password"
-          className="large"
-        />
-        <input
-          value={passwordTwo}
-          onChange={event =>
-            this.setState(
-              updateByPropertyName("passwordTwo", event.target.value)
-            )
-          }
-          type="password"
-          placeholder="Confirm Password"
-          className="large"
-        />
-        <Button disabled={isInvalid} type="submit">
-          Sign Up
-        </Button>
+      <div>
+        <SignUpWithGoogle />
+        <SignUpWithGithub /> <br />
+        <br />
+        <form onSubmit={this.onSubmit}>
+          <input
+            value={username}
+            onChange={event =>
+              this.setState(
+                updateByPropertyName("username", event.target.value)
+              )
+            }
+            type="text"
+            placeholder="Full Name"
+            className="large"
+          />
+          <input
+            value={email}
+            onChange={event =>
+              this.setState(updateByPropertyName("email", event.target.value))
+            }
+            type="text"
+            placeholder="Email Address"
+            className="large"
+          />
+          <input
+            value={passwordOne}
+            onChange={event =>
+              this.setState(
+                updateByPropertyName("passwordOne", event.target.value)
+              )
+            }
+            type="password"
+            placeholder="Password"
+            className="large"
+          />
+          <input
+            value={passwordTwo}
+            onChange={event =>
+              this.setState(
+                updateByPropertyName("passwordTwo", event.target.value)
+              )
+            }
+            type="password"
+            placeholder="Confirm Password"
+            className="large"
+          />
+          <Button disabled={isInvalid} type="submit">
+            Sign Up
+          </Button>
 
-        {error && <p>{error.message}</p>}
-      </form>
+          {error && <p>{error.message}</p>}
+        </form>
+        <br />
+        <p>
+          Already have an account? <Link to={routes.SIGN_IN}>Login</Link>
+        </p>
+      </div>
     );
   }
 }

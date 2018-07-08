@@ -1,26 +1,17 @@
-import React, { Component } from 'react'
-import 'particles.js/particles'
-
-
+import React, { Component } from "react";
+import "particles.js/particles";
 
 class Particles extends Component {
   constructor() {
-    super()
+    super();
   }
 
   componentDidMount() {
-    const particlesJS = window.particlesJS
-    // this.createParticles()
-    particlesJS.load('particles-js', '/particles.json', function() {
-      console.log('callback - particles.js config loaded')
-    })
+    const particlesJS = window.particlesJS;
+    particlesJS.load("particles-js", "/particles.json", function() {
+      console.log("callback - particles.js config loaded");
+    });
   }
-
-  // createParticles() {
-  //   particlesJS.load('particles-js', '/particles.json', function() {
-  //     console.log('callback - particles.js config loaded')
-  //   })
-  // }
 
   render() {
     return (
@@ -31,20 +22,15 @@ class Particles extends Component {
           #particles-js {
           position:absolute;
            width: 100%;
-           height: 40%;
-           z-index:1;
-          }
-          @media screen and (max-width: 700px) {
-             #particles-js {
-               height: 100%;
-             }
-           }
+           height: 35vh;
+           z-index:0;
+         }
 
           `}
         </style>
       </div>
-    )
+    );
   }
 }
 
-export default Particles
+export default Particles;

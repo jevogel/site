@@ -1,7 +1,7 @@
-import React from 'react'
-import styled, { injectGlobal } from 'styled-components'
-import Welcome from './Welcome'
-import Link from 'gatsby-link';
+import React from "react";
+import styled, { injectGlobal } from "styled-components";
+import Welcome from "./Welcome";
+import Link from "gatsby-link";
 
 injectGlobal`
 body {
@@ -12,25 +12,12 @@ body {
 a {
   text-decoration: none;
 }
-`
-
-// const Fullscreen = styled.div`
-//   height: ${props => props.h};
-//   background: ${props => props.gradient};
-//   z-index: 0;
-// `
+`;
 
 const Header = () => (
   <main>
-  <Link to="/">
-    <Welcome
-      c="#2196f3;"
-      title="enlight">
-
-      </Welcome>
-    </Link>
-
+    <Welcome c="#2196f3;" title="enlight" />
   </main>
-)
+);
 
-export default Header
+export default Header;

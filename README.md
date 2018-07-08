@@ -1,6 +1,6 @@
 # Enlight
 
-The new Enlight website - built with React & Gatsby
+The new Enlight website - built with React, Gatsby, and Firebase.
 
 ```
 git clone https://github.com/tryenlight/site.git

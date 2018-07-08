@@ -15,18 +15,28 @@ a {
   margin-top: 20px;
   border-radius: 5px;
   padding: 5px;
-  border: 2px solid #438cee;
-  width: 275px;
+  border: 2px solid #e4e4e4;
+  width: 300px;
+  transition: all 300ms ease;
 }
 
-.x-large {
+.large:focus {
+  border: 2px solid #438cee;
+}
+
+.submission-input {
   font-size: 20px;
   display: block;
   margin-top: 20px;
   border-radius: 5px;
   padding: 5px;
+  border: 2px solid #fff;
+  width: 300px;
+  transition: all 300ms ease;
+}
+
+.submission-input:focus {
   border: 2px solid #438cee;
-  width: 450px;
 }
 
 .submission {
@@ -35,39 +45,39 @@ a {
   margin-top: 20px;
   border-radius: 5px;
   padding: 5px;
-  border: 2px solid #438cee;
+  border: 2px solid #f4f4f4;
   width: 100%;
   height: 500px;
+  transition: all 100ms ease;
+}
+
+.submission:focus {
+  border: 2px solid #438cee;
+}
+
+.request {
+  font-size: 20px;
+  display: block;
+  margin-top: 20px;
+  border-radius: 5px;
+  padding: 5px;
+  border: 2px solid #e4e4e4;
+  width: 100%;
+  height: 100px;
+  transition: all 300ms ease;
+}
+
+.request:focus {
+  border: 2px solid #438cee;
 }
 
 *:focus {
   outline: none;
 }
 
-.card {
-  height: 320px;
-  padding-bottom: 30px;
-}
-
-.card:hover {
-  position: absolute;
-}
-
-.card img {
-  display: block;
-  margin: 0 auto;
-  height: 150px;
-  padding: 0px;
-  border-radius: 10px;
-}
-
-.gatsby-highlight pre[class*="language-"] {
+/* .gatsby-highlight pre[class*="language-"] {
   background-color: #f9fbfe;
-}
-
-code .language-text {
-  background-color: #f9fbfe;
-}
+} */
 
 .project img {
   height: 175px;
@@ -84,10 +94,25 @@ code .language-text {
 .post img {
   display: block;
   margin: 0 auto;
+  max-height: 400px;
 }
 
 .post .language-text {
-  background: #ebf2fc !important;
+  background: #f4fbff !important;
+}
+
+.post .language-text {
+  color: #006d99 !important;
+}
+
+.tutorial {
+  max-width: 50em;
+  margin: 0 auto;
+}
+
+.repl-tutorial {
+  height: 100vh;
+  overflow: scroll;
 }
 
 .project h1 {
@@ -95,4 +120,228 @@ code .language-text {
   padding-right: 10px;
   padding-bottom: 0;
   padding-top: 0;
+}
+
+.social {
+  display: inline-block;
+  margin-right: 10px;
+  transition: all 300ms ease;
+}
+
+.social:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+blockquote {
+  border-left: 5px solid #006d99;
+}
+
+blockquote p,
+pre {
+  margin-left: 10px;
+}
+
+/* AD */
+
+#carbonads {
+  display: block;
+  overflow: hidden;
+  padding: 0.5em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
+  border-radius: 10px;
+  background: #fcfcfc;
+  -moz-box-shadow: 0 0 15px #e4e4e4;
+  -webkit-box-shadow: 0 0 15px #e4e4e4;
+  box-shadow: 0 0 15px #e4e4e4;
+  width: 330px;
+  margin: 0 auto;
+  top: 90px;
+  right: 20px;
+  position: absolute;
+}
+
+@media only screen and (max-width: 1024px) {
+  #carbonads {
+    display: none;
+  }
+}
+
+#carbonads:hover .carbon-text {
+  color: #2f80ed;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  float: left;
+  margin-right: 0.75em;
+}
+
+.carbon-img img {
+  display: block;
+  line-height: 1;
+}
+
+.carbon-text {
+  display: block;
+  float: left;
+  max-width: 170px;
+  text-align: left;
+  padding-bottom: 20px;
+  color: #333;
+  text-decoration: none;
+}
+
+.carbon-poweredby {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: block;
+  font-size: 0.6em;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 1px;
+  color: #333;
+}
+
+/* chat */
+
+.chat {
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-bottom: 3%;
+  margin: 20px;
+  moz-box-shadow: 0 0 15px #e4e4e4;
+  -webkit-box-shadow: 0 0 15px #e4e4e4;
+  box-shadow: 0 0 15px #e4e4e4;
+  @media only screen and (max-width: 1024px) {
+    padding-bottom: 600px;
+  }
+}
+
+.chat-title {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.chat-title label {
+  font-size: 15px;
+  color: #438cee;
+}
+
+.chat li {
+  list-style: none;
+  padding: none !important;
+  margin: none !important;
+  padding: 5px;
+}
+
+.chat input {
+  font-size: 20px;
+  padding: 5px;
+}
+
+.messages {
+  padding-top: 20px;
+
+  padding-bottom: 30px;
+  height: 500px;
+  overflow: auto;
+}
+
+.message {
+  font-size: 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  padding: 5px;
+  border: 2px solid #e4e4e4;
+  width: 99%;
+}
+
+.message:focus {
+  border: 2px solid #438cee;
+  color: #333;
+  transition: all 300ms ease;
+}
+
+.chat .messenger {
+  font-weight: bold;
+  color: #333;
+  display: inline;
+  font-size: 15px;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  padding-bottom: 5px;
+}
+
+.chat .timestamp {
+  display: inline;
+  margin-right: 5px;
+  color: #333;
+  float: right;
+  font-size: 12px;
+}
+
+.chat .text {
+  margin-left: 0;
+  margin-top: 5px;
+  margin-right: 0;
+  font-size: 18px;
+  margin-bottom: 2px;
+}
+
+.channels li {
+  list-style: none;
+  display: inline;
+  font-size: 25px;
+  margin: 10px;
+  color: #333;
+  transition: all 100ms ease;
+}
+
+.channels li:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+@media only screen and (max-width: 1024px) {
+  .channels li {
+    display: block;
+  }
+}
+
+.channels {
+  text-align: center;
+}
+
+.channels label {
+  font-size: 30px;
+  color: #438cee;
+}
+
+.chat-card {
+  width: 75%;
+  margin: auto;
+  color: #fff;
+  background: linear-gradient(to right, #0082c8, #0082c8);
+  moz-box-shadow: 0 0 15px #fff;
+  -webkit-box-shadow: 0 0 15px #fff;
+  box-shadow: 0 0 15px #fff;
+  padding: 3%;
+  transition: all 200ms ease;
+}
+
+.chat-card:hover {
+  moz-box-shadow: 0 0 15px #e4e4e4;
+  -webkit-box-shadow: 0 0 15px #e4e4e4;
+  box-shadow: 0 0 15px #e4e4e4;
+  opacity: 0.8;
 }

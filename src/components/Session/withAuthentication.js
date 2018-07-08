@@ -1,15 +1,22 @@
-import React from 'react';
+import React from "react";
+import PropTypes from "prop-types";
 
-import AuthUserContext from './AuthUserContext';
-import { firebase } from '../../firebase';
+import AuthUserContext from "./AuthUserContext";
+import { firebase } from "../../firebase";
 
-const withAuthentication = (Component) =>
+const withAuthentication = Component => {
   class WithAuthentication extends React.Component {
     constructor(props) {
       super(props);
 
       this.state = {
-        authUser: null,
+        authUser: null
+      };
+    }
+
+    getChildContext() {
+      return {
+        authUser: this.state.authUser
       };
     }
 
@@ -26,10 +33,17 @@ const withAuthentication = (Component) =>
 
       return (
         <AuthUserContext.Provider value={authUser}>
-          <Component { ...this.props } />
+          <Component {...this.props} />
         </AuthUserContext.Provider>
       );
     }
   }
+
+  WithAuthentication.childContextTypes = {
+    authUser: PropTypes.object
+  };
+
+  return WithAuthentication;
+};
 
 export default withAuthentication;

@@ -1,11 +1,22 @@
-import React from 'react';
+import React from "react";
 
-import { PasswordForgetForm } from '../components/PasswordForget';
+import { PasswordForgetForm } from "../components/PasswordForget";
 
-const PasswordForgetPage = () =>
+import Header from "../components/Header";
+import styled from "styled-components";
+
+const SignElements = styled.div`
+  padding: 4%;
+  font-size: 20px;
+`;
+
+const PasswordForgetPage = () => (
   <div>
-    <h1>PasswordForget</h1>
-    <PasswordForgetForm />
+    <Header />
+    <SignElements>
+      <PasswordForgetForm />
+    </SignElements>
   </div>
+);
 
 export default PasswordForgetPage;

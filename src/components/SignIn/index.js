@@ -7,22 +7,28 @@ import { PasswordForgetLink } from "../PasswordForget";
 import { auth } from "../../firebase";
 import * as routes from "../../constants/routes";
 
+import SignInWithGoogle from "./Google";
+import SignInWithGithub from "./Github";
+
 const Button = styled.button`
   margin-top: 20px;
   padding: 10px;
   font-size: 20px;
-  border: 5px solid #438cee;
-  color: #438cee;
+  border: 3px solid #e4e4e4;
+  color: #333;
   border-radius: 5px;
   margin-right: 5px;
   font-weight: bold;
   background-color: #fff;
   z-index: 500;
+  display: block;
 
   &:hover {
-    background: #438cee;
-    color: #fff;
+    background: #fff;
+    border: 3px solid #438cee;
+    color: #333;
     transition: all 300ms ease;
+    cursor: pointer;
   }
 `;
 
@@ -67,31 +73,38 @@ class SignInForm extends Component {
     const isInvalid = password === "" || email === "";
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
-          className="large"
-          value={email}
-          onChange={event =>
-            this.setState(updateByPropertyName("email", event.target.value))
-          }
-          type="text"
-          placeholder="Email Address"
-        />
-        <input
-          className="large"
-          value={password}
-          onChange={event =>
-            this.setState(updateByPropertyName("password", event.target.value))
-          }
-          type="password"
-          placeholder="Password"
-        />
-        <Button className="large" disabled={isInvalid} type="submit">
-          Sign In
-        </Button>
+      <div>
+        <SignInWithGoogle />
+        <SignInWithGithub /> <br />
+        <br />
+        <form onSubmit={this.onSubmit}>
+          <input
+            className="large"
+            value={email}
+            onChange={event =>
+              this.setState(updateByPropertyName("email", event.target.value))
+            }
+            type="text"
+            placeholder="Email Address"
+          />
+          <input
+            className="large"
+            value={password}
+            onChange={event =>
+              this.setState(
+                updateByPropertyName("password", event.target.value)
+              )
+            }
+            type="password"
+            placeholder="Password"
+          />
+          <Button className="large" disabled={isInvalid} type="submit">
+            Sign In
+          </Button>
 
-        {error && <p>{error.message}</p>}
-      </form>
+          {error && <p>{error.message}</p>}
+        </form>
+      </div>
     );
   }
 }
