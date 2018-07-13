@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: "Enlight",
     author: "Samay Shamdasani",
-    description: "Learn to code by buildign projects",
+    description: "Learn to code by building projects",
     siteUrl: "https://enlight.nyc/"
   },
   pathPrefix: "/",
